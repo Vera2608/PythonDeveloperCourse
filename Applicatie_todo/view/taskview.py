@@ -6,8 +6,9 @@ class TaskView:
     def show_menu ():
         print("Menu")
         print("1. Add task")
-        print("2. Show task")
-        print("3. Exit")
+        print("2. Delete task")
+        print("3. Show task")
+        print("4. Exit")
 
     @staticmethod
     def menu_choice():
@@ -15,9 +16,12 @@ class TaskView:
         if choice == 1:
             TaskView.add_task()
         elif choice == 2:
+            #delete task
+            TaskView.delete_task()
+        elif choice == 3:
             # show tasks
             TaskView.show_tasks()
-        elif choice == 3:
+        elif choice == 4:
             exit()
 
     @staticmethod
@@ -28,5 +32,10 @@ class TaskView:
 
     @staticmethod
     def add_task():
-        task = input("Enter task: ")
+        task = input("Enter taak om toe te voegen: ")
         TaskController.add_task(task)
+
+    @staticmethod
+    def delete_task():
+        task = input("Enter taak om te verwijderen: ")
+        TaskController.delete_task(task)

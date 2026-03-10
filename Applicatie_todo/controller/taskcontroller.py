@@ -9,3 +9,7 @@ class TaskController:
     @staticmethod
     def add_task(task):
         TaskModel.add_task(task)
+
+    @staticmethod
+    def delete_task(task):
+        TaskModel.delete_task(task)
