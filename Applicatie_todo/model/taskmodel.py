@@ -12,15 +12,16 @@ class TaskModel(ReadModel):
 
     @staticmethod
     def add_task(task):
+        rows = ReadModel.read_file(TaskModel.input_file)
+        nieuw_id = len(rows) + 1
         csv_file = open('data/taken.csv', 'a', newline= '')
         writer = csv.writer(csv_file)
-        writer.writerow([task])
+        writer.writerow([nieuw_id,task])
 
     @staticmethod
     def delete_task(task):
 
         column = "taak"
-        input_file = "data/taken.csv"
 
         rows = ReadModel.read_file()
 
