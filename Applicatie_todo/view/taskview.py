@@ -7,15 +7,18 @@ class TaskView:
         print("Menu")
         print("1. Add task")
         print("2. Show task")
+        print("3. Exit")
 
     @staticmethod
     def menu_choice():
-        choise = int(input("Choose an option: "))
-        if choise == 1:
+        choice = int(input("Choose an option: "))
+        if choice == 1:
             TaskView.add_task()
-        elif choise == 2:
+        elif choice == 2:
             # show tasks
             TaskView.show_tasks()
+        elif choice == 3:
+            exit()
 
     @staticmethod
     def show_tasks():
