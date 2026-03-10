@@ -11,5 +11,5 @@ class TaskController:
         TaskModel.add_task(task)
 
     @staticmethod
-    def delete_task(task):
-        TaskModel.delete_task(task)
+    def delete_task(task_id):
+        TaskModel.delete_task(task_id)
