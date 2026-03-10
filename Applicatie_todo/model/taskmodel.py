@@ -1,6 +1,8 @@
 import csv
+from Applicatie_todo.model.readmodel import ReadModel
 
-class TaskModel:
+
+class TaskModel(ReadModel):
     @staticmethod
     def get_tasks():
         csv_file = open('data/taken.csv', newline= '')
@@ -20,10 +22,7 @@ class TaskModel:
         column = "taak"
         input_file = "data/taken.csv"
 
-        with open(input_file, newline="") as f:
-            reader = csv.DictReader(f)
-            fieldnames = reader.fieldnames
-            rows = list(reader)
+        rows = ReadModel.read_file()
 
         #delete the row using a filter:
         rows = [row for row in rows if row[column] != task]
