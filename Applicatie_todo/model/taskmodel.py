@@ -19,17 +19,13 @@ class TaskModel(ReadModel):
         writer.writerow([nieuw_id,task])
 
     @staticmethod
-    def delete_task(task):
+    def delete_task(task_id):
 
-        column = "taak"
-
-        rows = ReadModel.read_file()
+        column = "id"
+        rows = ReadModel.read_file(TaskModel.input_file)
 
         #delete the row using a filter:
-        rows = [row for row in rows if row[column] != task]
+        rows = [row for row in rows if row[column] != task_id]
 
+        ReadModel.write_file(TaskModel.input_file, rows)
 
-        with open(input_file, "w", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)

@@ -37,5 +37,5 @@ class TaskView:
 
     @staticmethod
     def delete_task():
-        task = input("Enter taak om te verwijderen: ")
-        TaskController.delete_task(task)
+        task_id = input("Enter taak nummer om te verwijderen: ")
+        TaskController.delete_task(task_id)
