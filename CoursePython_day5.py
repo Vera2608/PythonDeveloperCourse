@@ -28,14 +28,14 @@
 
 # print("auto", a.merk, "heeft snelheid", a.snelheid)
 # print("auto", b.merk, "heeft snelheid", b.snelheid)
-
-
-from film_class import Film
+#
+#
+from Classes.film_class import Film
 # films = [Film("Titanic", 8.0), Film ("365 Days", 2.2), Film("Rocky", 8.1), Film("Frankenstein", 7.4)] maar je kan het ook in een losse csv zetten:
 import csv
 films = []
-
-with open("film_overview.csv", newline="") as f:
+#
+with open("Classes.film_overview.csv", newline="") as f:
     reader = csv.reader(f)
     for rij in reader:
         film = Film(rij[0], float(rij[1]))
@@ -53,10 +53,3 @@ for film in gesorteerd:
 
 
 
-
-#
-#
-#
-# for film in gesorteerd:
-#     if film.score >= 7.5:
-#         print(film.titel, film.score)
