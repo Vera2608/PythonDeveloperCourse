@@ -7,3 +7,9 @@ class TaskModel:
         reader = csv.reader(csv_file)
         tasks = list(reader)
         return tasks
+
+    @staticmethod
+    def add_task(task):
+        csv_file = open('data/taken.csv', 'a', newline= '')
+        writer = csv.writer(csv_file)
+        writer.writerow([task])

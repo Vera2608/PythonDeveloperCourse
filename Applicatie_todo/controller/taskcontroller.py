@@ -5,3 +5,7 @@ class TaskController:
     def get_tasks():
         taken = TaskModel.get_tasks()
         return taken
+
+    @staticmethod
+    def add_task(task):
+        TaskModel.add_task(task)

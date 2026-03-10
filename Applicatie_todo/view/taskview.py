@@ -12,8 +12,7 @@ class TaskView:
     def menu_choice():
         choise = int(input("Choose an option: "))
         if choise == 1:
-            # add task
-            pass
+            TaskView.add_task()
         elif choise == 2:
             # show tasks
             TaskView.show_tasks()
@@ -23,3 +22,8 @@ class TaskView:
         taken = TaskController.get_tasks()
         print("Tasks:")
         print(taken)
+
+    @staticmethod
+    def add_task():
+        task = input("Enter task: ")
+        TaskController.add_task(task)
